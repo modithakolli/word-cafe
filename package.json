@@ -21,7 +21,7 @@
   "devDependencies": {
     "@capacitor/cli": "8.5.3",
     "@capacitor/assets": "3.0.5",
-    "playwright": "1.49.1"
+    "playwright": "1.65.1"
   },
   "engines": {
     "node": ">=22.0.0"
