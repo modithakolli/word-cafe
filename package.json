@@ -19,9 +19,9 @@
     "@capacitor/core": "8.5.3"
   },
   "devDependencies": {
-    "@capacitor/cli": "8.5.3",
-    "@capacitor/assets": "3.0.5",
-    "playwright": "1.49.1"
+    "@capacitor/assets": "^4.0.0",
+    "@capacitor/cli": "^8.6.3",
+    "playwright": "^1.65.1"
   },
   "engines": {
     "node": ">=22.0.0"
