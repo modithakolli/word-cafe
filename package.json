@@ -1,0 +1,31 @@
+{
+  "name": "word-cafe",
+  "version": "1.7.0",
+  "private": true,
+  "description": "Word Café: an offline GRE vocabulary game for Android with privacy and security built in.",
+  "scripts": {
+    "sync": "node scripts/write-version.js && cap sync android",
+    "open": "cap open android",
+    "assets": "capacitor-assets generate --android",
+    "set-version": "node scripts/write-version.js && node scripts/set-android-version.js",
+    "update": "node scripts/update-from-folder.js",
+    "test": "node tests/validate-data.js",
+    "test:ui": "node tests/ui.test.js",
+    "test:security": "node tests/security.test.js",
+    "test:all": "npm test && npm run test:ui && npm run test:security"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.5.3",
+    "@capacitor/core": "8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.3",
+    "@capacitor/assets": "3.0.5",
+    "playwright": "1.49.1"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "license": "MIT",
+  "author": "Moditha Kolli"
+}

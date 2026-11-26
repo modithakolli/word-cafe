@@ -1,0 +1,14 @@
+node_modules/
+android/app/build/
+android/.gradle/
+*.keystore
+*.jks
+local.properties
+*.aab
+*.apk
+.idea/
+*.log
+www.new/
+www.old/
+*.bak
+test-results/

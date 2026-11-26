@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Check dependencies for known problems
+        run: npm audit --audit-level=high
+      - name: Data checks (words, ids, meanings, version)
+        run: npm test
+      - name: Install a browser for the app tests
+        run: npx playwright install --with-deps chromium
+      - name: App tests (replay, backup, upgrade, test-out)
+        run: npm run test:ui
+      - name: Security tests (hostile codes, damaged data, security policy)
+        run: npm run test:security
